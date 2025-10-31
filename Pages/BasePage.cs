@@ -2,6 +2,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 namespace Pages
 {
+    // В классе определено множество методов для взаимодействия со страницей и элементами на ней (Selenium + JavaScript )
     public class BasePage
     {
         protected IWebDriver Driver;
@@ -60,6 +61,12 @@ namespace Pages
             }
         }
 
+        public void SwithToNewTab() // Переключение на новую вкладку браузера
+        {
+            var tabs = Driver.WindowHandles;
+            Driver.SwitchTo().Window(tabs[tabs.Count - 1]);
+        }
+
         // Далее перечислены JavaScript методы для взаимодействия со страницей, так как Selenium не реализовывает их, а также они могут быть полезны в неокторых тестах
         public void ScrollToElement(IWebElement element)    // Скролл к конкретному элементу
         {
@@ -85,5 +92,7 @@ namespace Pages
         {
             return ((IJavaScriptExecutor)Driver).ExecuteScript("return document.readyState;").ToString() == "complete";
         }
+
+
     }
 }

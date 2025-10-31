@@ -13,8 +13,7 @@ namespace Test
         protected IWebDriver Driver;
         protected string browserType;
         
-        // В каждом новом тесте необходимо переопределить, чтобы открывалась нужная страница
-        protected abstract string Url { get; }
+        protected abstract string Url { get; }  // В каждом новом тесте необходимо переопределить, чтобы открывалась нужная страница
 
         public BaseTest(string browserType)
         {

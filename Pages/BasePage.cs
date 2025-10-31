@@ -63,9 +63,11 @@ namespace Pages
 
         public void SwithToNewTab() // Переключение на новую вкладку браузера
         {
+            Wait.Until(d => d.Url != "about:blank");
             var tabs = Driver.WindowHandles;
             Driver.SwitchTo().Window(tabs[tabs.Count - 1]);
         }
+
 
         // Далее перечислены JavaScript методы для взаимодействия со страницей, так как Selenium не реализовывает их, а также они могут быть полезны в неокторых тестах
         public void ScrollToElement(IWebElement element)    // Скролл к конкретному элементу

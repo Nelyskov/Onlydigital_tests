@@ -21,6 +21,14 @@ namespace Data
             yield return new object[] { FooterLocators.pitchButton, "Кнопка pitch" };
             yield return new object[] { FooterLocators.FooterYear, "Год в футере" };
         }
+        
+        public static IEnumerable GetSocialButtons()
+        {
+            yield return new object[] { FooterLocators.BeLogo, "Логотип Be", "https://www.behance.net/onlydigitalagency" };
+            yield return new object[] { FooterLocators.dpLogo, "Логотип dp", "https://dprofile.ru/only" };
+            yield return new object[] { FooterLocators.tgLogo, "Логотип tg", "https://t.me/onlycreativedigitalagency" };
+            yield return new object[] { FooterLocators.vkLogo, "Логотип vk", "https://vk.com/onlydigitalagency"};
+        }
     }
 
     // Все возможные локаторы в футере

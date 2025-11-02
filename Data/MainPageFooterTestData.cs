@@ -3,9 +3,11 @@ using System.Collections;
 
 namespace Data
 {
-    public static class FooterTestData
+    public static class MainPageFooterTestData
     {
         // Метод возвращающий все локаторы для TestCaseSource
+        // Каждый yield return возвращает массив объектов, где первый элемент - локатор, второй - описание элемента
+        // Это все элементы футера на главной страницу
         public static IEnumerable GetFooterElements()
         {
             yield return new object[] { FooterLocators.FooterButton, "Кнопка 'Начать проект'" };
@@ -20,8 +22,9 @@ namespace Data
             yield return new object[] { FooterLocators.pdfButton, "Кнопка pdf" };
             yield return new object[] { FooterLocators.pitchButton, "Кнопка pitch" };
             yield return new object[] { FooterLocators.FooterYear, "Год в футере" };
+            yield return new object[] { FooterLocators.footerPrivacyPolicy, "Политика конфиденциальности" };
         }
-        
+        // Метод возвращающий локаторы социальных кнопок для TestCaseSource
         public static IEnumerable GetSocialButtons()
         {
             yield return new object[] { FooterLocators.BeLogo, "Логотип Be", "https://www.behance.net/onlydigitalagency" };
@@ -44,13 +47,16 @@ namespace Data
         public static By FooterTelegram = By.XPath($"{FooterxPath}//*[contains(@class, 'Footer_telegram')]");
         public static By FooterContacts = By.XPath($"{FooterxPath}//*[contains(@class, 'Footer_contacts')]");
         public static By FooterText = By.XPath($"{FooterxPath}//*[contains(@class, 'Footer_text')]");
+         public static By FooterYear = By.XPath($"{FooterxPath}//*[contains(@class, 'Footer_year')]");
 
         // Это кнопки, но помечены тегом <a><a/>
         // public static By pdfButton = By.XPath($"{FooterxPath}//button[contains(text(),'pdf')]");
         // public static By pitchButton = By.XPath($"{FooterxPath}//button[contains(text(),'pitch')]");
+        // public static By footerPrivacyPolicy = By.XPath($"{FooterxPath}//button[contains(text(),'Политика конфиденциальности')]");
 
         public static By pdfButton = By.XPath($"{FooterxPath}//a[contains(text(),'pdf')]");
         public static By pitchButton = By.XPath($"{FooterxPath}//a[contains(text(),'pitch')]");
-        public static By FooterYear = By.XPath($"{FooterxPath}//*[contains(@class, 'Footer_year')]");
+        public static By footerPrivacyPolicy = By.XPath($"{FooterxPath}//a[contains(text(),'Политика конфиденциальности')]");
+
     }
 }

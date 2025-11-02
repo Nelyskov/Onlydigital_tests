@@ -8,12 +8,13 @@ namespace Test
 {
 
     // Настройка для каждого теста
+    // Каждый тест наследуется от BaseTest и в конструктор должен передавать тип браузера (строковый тип)
     public abstract class BaseTest
     {
         protected IWebDriver Driver;
         protected string browserType;
         
-        protected abstract string Url { get; }  // В каждом новом тесте необходимо переопределить, чтобы открывалась нужная страница
+        protected abstract string Url { get; }  // В каждом новом тесте необходимо переопределить Url (который будет реализовываться), чтобы открывалась нужная страница
 
         public BaseTest(string browserType)
         {

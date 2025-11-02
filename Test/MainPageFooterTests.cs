@@ -9,6 +9,7 @@ namespace Test
     // Тесты для браузеров GOogle Chrome и Mozilla Firefox
     [TestFixture("chrome")]
     [TestFixture("firefox")]
+    // [Parallelizable(ParallelScope.All)] - Тест выполняются последовательно, а не параллельно
     public class MainPageFooterTests : BaseTest
     {
         BasePage basePage;
